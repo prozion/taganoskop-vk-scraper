@@ -74,7 +74,7 @@ HEADER
     #<<FOOTER
 <footer>
   ~a
-  <div><b>~a</b> Агрегатор постов людей и команд, развивающих территории</div>
+  <div><b>~a</b> Агрегатор анонсов в Таганроге и соседних городах</div>
 </footer>
 FOOTER
     (if-not statistics
