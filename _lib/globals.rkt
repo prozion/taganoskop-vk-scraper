@@ -52,6 +52,8 @@
     'people "cpu_people.tree"
     'networks "networks_g.tree"
 ))
+
+(define SPECIAL_TAGS (list "#agg " "#tgnevent" "#тгнанонс"))
 ;
 (define MIN_MEMBER 1)
 (define MAX_MEMBERS_IN_SCANNED_GROUPS 10000)

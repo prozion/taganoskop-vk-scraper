@@ -30,5 +30,14 @@
 			changefreq:daily
 			n:3
 		<.>
+		Search_people
+			name:"Поиск людей" 
+			title:"Поиск людей"
+			description:""
+			keywords:""
+			h1:"Посты со стен пользователей вк"
+			path:search_people.html 
+			n:-1
+		<.>
 
 		

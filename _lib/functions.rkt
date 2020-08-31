@@ -377,12 +377,20 @@
 (define-catch (group-post? post)
   ($ gid post))
 
+(define-catch (contains-special-tags? text)
+  (ormap
+    (λ (tag) (string-contains? text tag))
+    SPECIAL_TAGS))
+
 (define-catch (mark-post-text-with post open-tag close-tag #:marked-text m)
-  (let* ((text ($ text post))
-        (text (string-replace text m (format "~a~a~a" open-tag m close-tag))))
+  (let* (
+        (M (titlefy m))
+        (text ($ text post))
+        (text (string-replace text m (format "~a~a~a" open-tag m close-tag)))
+        (text (string-replace text M (format "~a~a~a" open-tag M close-tag))))
     (hash-union (hash 'text text) post)))
 
-(define-catch (filter-posts posts #:entities entities #:type (type #f) #:trigger (trigger #f) #:trigger-expression (trigger-expression #f) #:within-days (within-days #f) #:start-n (start-n #f) #:n (n #f) #:min-symbols (min-symbols #f) #:max-symbols (max-symbols #f))
+(define-catch (filter-posts posts #:entities entities #:type (type #f) #:trigger (trigger #f) #:trigger-expression (trigger-expression #f) #:within-days (within-days #f) #:start-n (start-n #f) #:n (n #f) #:min-symbols (min-symbols #f) #:max-symbols (max-symbols #f) #:use-special-tags (use-special-tags? #f))
   (let* (
         (trigger-aliases
           (let* (
@@ -416,6 +424,8 @@
                         ; ((not (@id ($ entity-id post) entities)) #f)
                         ((equal? "<none>" current-trigger) res) ; ignore
                         ((equal? "<f>" current-trigger) (pushr res post)) ; reset
+                        ((and use-special-tags? (contains-special-tags? ($ text post)))
+                          (pushr res post))
                         (current-trigger-expression?
                           (let* ((m? (match-trigger-expression? (remove-hashtags ($ text post)) current-trigger #:aliases trigger-aliases)))
                             (if m?

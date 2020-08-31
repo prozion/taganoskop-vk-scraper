@@ -87,7 +87,8 @@
                     (filter-posts
                         (tgn-posts)
                         #:entities tgn-items
-                        #:trigger-expression '(++ event_future)
+                        #:trigger-expression '(++ event_future event_by_date)
+                        #:use-special-tags #t
                         #:within-days WITHIN_DAYS
                         #:min-symbols MIN_SYMBOLS)
                     #:entities tgn-items
@@ -98,7 +99,8 @@
                     (filter-posts
                         (rnd-posts)
                         #:entities rnd-items
-                        #:trigger-expression '(++ event_future)
+                        #:trigger-expression '(++ event_future event_by_date)
+                        #:use-special-tags #t
                         #:within-days WITHIN_DAYS
                         #:min-symbols MIN_SYMBOLS)
                     #:entities rnd-items
@@ -109,7 +111,8 @@
                     (filter-posts
                         (south-posts)
                         #:entities south-items
-                        #:trigger-expression '(++ event_future)
+                        #:trigger-expression '(++ event_future event_by_date)
+                        #:use-special-tags #t
                         #:within-days WITHIN_DAYS
                         #:min-symbols MIN_SYMBOLS)
                     #:entities south-items
@@ -123,6 +126,6 @@
 (write-data-to-file (Updates) "../_cache/page_updates.txt")
 
 ; trigger uploading the new files onto cpu.denis-shirshov.ru server:
-(-s (get-url "http://taganoskop.denis-shirshov.ru/updater.php"))
+(-s (get-url "http://taganrog.online/updater.php"))
 
 (--- (format "~a Конец компиляции~n~n" (timestamp)))
