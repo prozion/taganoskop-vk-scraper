@@ -64,6 +64,7 @@
 ; cache directory for persistent data:
 ; (define CACHE_DIR "_cache")
 (define CACHE_DIR "_cache")
+(define SERVER_DIR "/var/www/html/pages/taganoskop")
 
 ; neo4j parameters
 (define NEO4J_DIR "C:/Users/User/.Neo4jDesktop/neo4jDatabases/database-24588709-5b4b-4dea-b8ea-c622197a3c12/installation-4.0.3")
