@@ -1,16 +1,11 @@
 #lang racket
 
 (require compatibility/defmacro)
-(require "../../_lib_links/odysseus_all.rkt")
-(require "../../_lib_links/odysseus_tabtree.rkt")
-(require "../../_lib_links/odysseus_scrap.rkt")
-(require "../../_lib_links/odysseus_report.rkt")
-(require "../../_lib_links/odysseus_whereami.rkt")
-(require "../../_lib_links/settings.rkt")
+(require odysseus)
 ;
 (require "globals.rkt")
 ;
-(require (for-syntax "../../_lib_links/odysseus_all.rkt"))
+(require (for-syntax odysseus))
 
 (provide (all-defined-out))
 

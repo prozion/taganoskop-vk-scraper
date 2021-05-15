@@ -1,6 +1,6 @@
 #lang racket
 
-(require "../../_lib_links/odysseus_all.rkt")
+(require odysseus)
 ;
 (provide (all-defined-out))
 ;
@@ -46,13 +46,6 @@
             "Донецк" "Луганск"
             ))
 
-(define CLUSTERS
-  (hash
-    'teams "cpu_teams.tree"
-    'people "cpu_people.tree"
-    'networks "networks_g.tree"
-))
-
 (define SPECIAL_TAGS (list "#agg " "#tgnevent" "#тгнанонс"))
 ;
 (define MIN_MEMBER 1)
@@ -63,11 +56,5 @@
 
 ; cache directory for persistent data:
 ; (define CACHE_DIR "_cache")
-(define CACHE_DIR "_cache")
-(define SERVER_DIR "/var/www/html/pages/taganoskop")
-
-; neo4j parameters
-(define NEO4J_DIR "C:/Users/User/.Neo4jDesktop/neo4jDatabases/database-24588709-5b4b-4dea-b8ea-c622197a3c12/installation-4.0.3")
-(define CSV_PATH (string-append NEO4J_DIR "/import"))
-(define LOGIN "scipost")
-(define PWD "scipost")
+(define CACHE_DIR "/var/cache/projects/taganoskop")
+(define SERVER_DIR "/var/www/html/taganoskop")

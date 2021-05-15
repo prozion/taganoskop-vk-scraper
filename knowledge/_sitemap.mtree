@@ -10,34 +10,43 @@
 			changefreq:daily
 			n:1
 		<.>
-		Rnd
-			name:"Ростов" 
-			title:"Лента событий в Ростове-на-Дону"
-			description:"Агрегатор постов о предстоящих событиях в Ростове-на-Дону"
+		; Rnd
+		; 	name:"Ростов" 
+		; 	title:"Лента событий в Ростове-на-Дону"
+		; 	description:"Агрегатор постов о предстоящих событиях в Ростове-на-Дону"
+		; 	keywords:"агрегатор постов,агрегатор анонсов"
+		; 	h1:"События в Ростове"
+		; 	path:rnd.html 
+		; 	changefreq:daily
+		; 	n:-2
+		; <.>
+		; South
+		; 	name:"Юг" 
+		; 	title:"Лента событий в Южном регионе"
+		; 	description:"Агрегатор постов о предстоящих событиях в Южном регионе"
+		; 	keywords:"агрегатор постов,агрегатор анонсов"
+		; 	h1:"События на Юге"
+		; 	path:south.html 
+		; 	changefreq:daily
+		; 	n:-3
+		; <.>
+		; Search_people
+		; 	name:"Поиск людей" 
+		; 	title:"Поиск людей"
+		; 	description:""
+		; 	keywords:""
+		; 	h1:"Посты со стен пользователей вк"
+		; 	path:search_people.html 
+		; 	n:-1
+		; <.>
+		It
+			name:"It" 
+			title:"Лента IT Сообщества Таганрога и Ростова"
+			description:"Агрегатор постов от IT компаний региона"
 			keywords:"агрегатор постов,агрегатор анонсов"
-			h1:"События в Ростове"
-			path:rnd.html 
+			h1:"IT Сообщество"
+			path:it.html 
 			changefreq:daily
 			n:2
 		<.>
-		South
-			name:"Юг" 
-			title:"Лента событий в Южном регионе"
-			description:"Агрегатор постов о предстоящих событиях в Южном регионе"
-			keywords:"агрегатор постов,агрегатор анонсов"
-			h1:"События на Юге"
-			path:south.html 
-			changefreq:daily
-			n:3
-		<.>
-		Search_people
-			name:"Поиск людей" 
-			title:"Поиск людей"
-			description:""
-			keywords:""
-			h1:"Посты со стен пользователей вк"
-			path:search_people.html 
-			n:-1
-		<.>
-
 		

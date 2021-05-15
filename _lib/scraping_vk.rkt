@@ -1,8 +1,7 @@
 #lang racket
 
-(require "../../_lib_links/odysseus_all.rkt")
-(require "../../_lib_links/odysseus_tabtree.rkt")
-(require "../../_lib_links/odysseus_scrap.rkt")
+(require odysseus)
+(require tabtree)
 (require racket/serialize)
 (require compatibility/defmacro)
 (require (for-syntax racket/match racket/syntax racket/format))

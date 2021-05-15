@@ -1,7 +1,7 @@
 #lang racket
 
 (require compatibility/defmacro)
-(require "../../_lib_links/odysseus_all.rkt")
+(require odysseus)
 (require "functions.rkt")
 (require "globals.rkt")
 (require "geography.rkt")
