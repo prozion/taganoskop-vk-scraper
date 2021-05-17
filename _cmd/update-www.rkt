@@ -45,12 +45,12 @@
 
 (define-catch (update-cache)
   (parameterize ((Name-id-hash (h-galias-gid)))
-    (cache-posts
-        #:source (list taganrog.tree)
-        #:write-to-cache (_cache "tgn_posts.txt")
-        #:ignore-with-status #t
-        #:ignore-sleepy #t
-        #:read-depth 10)
+    ; (cache-posts
+    ;     #:source (list taganrog.tree)
+    ;     #:write-to-cache (_cache "tgn_posts.txt")
+    ;     #:ignore-with-status #t
+    ;     #:ignore-sleepy #t
+    ;     #:read-depth 10)
     ; (cache-posts
     ;     #:source (list rnd.tree)
     ;     #:write-to-cache "../_cache/rnd_posts.txt"
