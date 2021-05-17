@@ -1,10 +1,10 @@
-ra_it
+ra_it +place:Ростов-на-Дону
 	Айтикаст vk:vk.com/iteacast u:286
 	; Акселератор_SBS_ЮФУ vk:vk.com/acsfedu p:108
 	; Амина_Прима vk:vk.com/aminellle f:790
 	; Ангелина_Агалакова vk:vk.com/by_angelina f:814
 	; Анна_Изотова vk:vk.com/a.izotova f:311
-	Андрей_Миськов vk:vk.com/andreymiskov f:371
+	Андрей_Миськов vk:vk.com/andreymiskov f:371 place:Таганрог
 	; БквСофт vk:vk.com/bkvsoftcom u:156
 	; БРМЭИС-4У vk:vk.com/ai_2016 u:265
 	Вадим_Мартынов vk:vk.com/vadimyan f:5545
@@ -14,14 +14,14 @@ ra_it
 	; Владислава_Рябухина vk:vk.com/vladinemarina f:483
 	; Войти_в_IT vk:vk.com/it.enter u:47
 	; Встреча_ростовской_JUG vk:vk.com/club5583524 u:16
-	ИКТИБ_ЮФУ vk:vk.com/ictis_sfedu u:3224
+	ИКТИБ_ЮФУ vk:vk.com/ictis_sfedu u:3224 place:Таганрог
 	; Иммельман vk:vk.com/immelman_ru u:74
-	Инновационное_пространство_ИКТИБ vk:vk.com/proictis u:514
+	Инновационное_пространство_ИКТИБ vk:vk.com/proictis u:514 place:Таганрог
 	; Интернет_Фрегат vk:vk.com/ifrigate u:169
 	; Ирина_Сафонова vk:vk.com/id155121164 f:525
 	; ИТ_Лагерь_школы_кода vk:vk.com/it_bootcamp u:198
 	; ИТ_Ростов vk:vk.com/rostov_itd u:19
-	Крайт vk:vk.com/krayt_studio u:708
+	Крайт vk:vk.com/krayt_studio u:708 place:Таганрог
 	; Коворкинг_Smart_Space vk:vk.com/smartswork u:274
 	; Коворкинг_Место vk:vk.com/mestocc u:1577
 	Коворкинг_Новый_Ростов vk:vk.com/coworking_undertheroof u:1522
@@ -33,7 +33,8 @@ ra_it
 	; Лаборатория_кибернетики vk:vk.com/cyberlab.ictis u:114
 	; Лада_Родзина vk:vk.com/ladarodzina f:487
 	; Магазин_Радиопрофиль vk:vk.com/radioprofile_rnd u:439
-	Максим_Болотов vk:vk.com/inomaximus f:455
+	Максим_Болотов vk:vk.com/inomaximus f:455 place:Таганрог
+	; Максим_Степанов vk:vk.com/thestepanovmax u:330 
 	; Мария_Забродина vk:vk.com/mariehr f:654
 	; Медиа_Масс.Штаб vk:vk.com/mass.shtab u:48
 	Найди_работу_программист vk:vk.com/it_rabota_rostov u:581
@@ -56,12 +57,12 @@ ra_it
 	; Спецвузавтоматика vk:vk.com/niisva u:74
 	; Спортивное_программирование_в_Ростове vk:vk.com/rndsportprog p:35
 	Студия_Олега_Чулакова vk:vk.com/olegchulakovstudio u:4989
-	Таганрогское_сообщество_разработчиков vk:vk.com/devcommunity u:622
-	Технологии_Проекты_Инновации_ИКТИБ vk:vk.com/proictis u:826
+	Таганрогское_сообщество_разработчиков vk:vk.com/devcommunity u:622 place:Таганрог
+	Технологии_Проекты_Инновации_ИКТИБ vk:vk.com/proictis u:826 place:Таганрог
 	Тимлид_на_диване vk:vk.com/teamlead161 u:74
 	Точка_Кипения_ДГТУ vk:vk.com/tkip61dstu u:380
 	Точка_Кипения_РНД vk:vk.com/tochkak u:387
-	Точка_Кипения_Таганрог vk:vk.com/pointtaganrog u:336
+	Точка_Кипения_Таганрог vk:vk.com/pointtaganrog u:336 place:Таганрог
 	Точка_Кипения_ЮФУ vk:vk.com/tksfedu u:1161
 	; Фаблаб_Генератор vk:vk.com/fablabgen u:90
 	; Фаблаб_Технократ vk:vk.com/myfablab u:137
@@ -69,8 +70,8 @@ ra_it
 	; Фестиваль_Rukami vk:vk.com/rukami61 p:237
 	; Фирон vk:vk.com/firon_rnd u:20
 	; Фирон_лаб vk:vk.com/fironlab u:70
-	Центр_обучения_Dunice vk:vk.com/edu.dunice u:186
-	Центр_обучения_Inostudio vk:vk.com/inoeducation u:805
+	Центр_обучения_Dunice vk:vk.com/edu.dunice u:186 place:Таганрог
+	Центр_обучения_Inostudio vk:vk.com/inoeducation u:805 place:Таганрог
 	Школа_повышения_IT_грамотности_БИТ vk:vk.com/it_school_tgn u:213
 	; Школа_программирования_Vector vk:vk.com/vector_itschool u:251
 	; Школа_разработки_Fast_Coder vk:vk.com/club152943772 u:28
@@ -86,16 +87,16 @@ ra_it
 	Accenture vk:vk.com/rnd_accenture u:208
 	Afterlogic vk:vk.com/afterlogic u:1470
 	Anthill-IT vk:vk.com/akosotuhin f:260
-	Arcadia vk:vk.com/softwarecountry u:889
+	Arcadia vk:vk.com/softwarecountry u:889 place:Таганрог
 	; Azov_Developers_Meetup vk:vk.com/azovdevmeetup p:151
 	A2seven vk:vk.com/a2seven u:1508
 	; Bear_SAS vk:vk.com/public167402391 u:70
-	Brainhorn vk:vk.com/brainhorn u:285
+	Brainhorn vk:vk.com/brainhorn u:285 place:Таганрог
 	Code_Hipsters vk:vk.com/codehipsters u:2509
 	; Code_In_The_Dark vk:vk.com/codeinthedark p:76
 	; Coworking_центр_в_Таганроге vk:vk.com/coworking.taganrog u:48
 	Curogram vk:vk.com/curogram u:143
-	CVisionLab vk:vk.com/cvisionlab u:831
+	CVisionLab vk:vk.com/cvisionlab u:831 place:Таганрог
 	DBI vk:vk.com/dbirostov u:275
 	DDos_Guard vk:vk.com/ddosguardnet u:577
 	Devexperts vk:vk.com/devexperts u:1042
@@ -106,7 +107,7 @@ ra_it
 	DonRiver vk:vk.com/donriver u:204
 	; Donteco vk:vk.com/club128531647 u:30
 	DPartners vk:vk.com/dpartners u:214
-	Dunice vk:vk.com/dunice u:1054
+	Dunice vk:vk.com/dunice u:1054 place:Таганрог
 	Elonsoft vk:vk.com/elonsoft u:209
 	Endreik vk:vk.com/se_develop u:436
 	; ESignal vk:vk.com/club34724707 u:80
@@ -118,9 +119,9 @@ ra_it
 	GameDev_Ростов vk:vk.com/gamedevrnd u:59
 	GameNuts vk:vk.com/pakhomych94 f:357
 	; Game_Jam_Taganrog vk:vk.com/jamtgn p:29
-	German_Web vk:vk.com/germandevweb u:575
+	German_Web vk:vk.com/germandevweb u:575 place:Таганрог
 	GDG_Ростов vk:vk.com/gdgrnd u:317
-	GDG_Таганрог vk:vk.com/gdg_taganrog u:130
+	GDG_Таганрог vk:vk.com/gdg_taganrog u:130 place:Таганрог
 	GDG_DevFest_RND_2016 vk:vk.com/devfestrnd u:151
 	GDG_South_DevFest vk:vk.com/south_devfest u:448
 	Graven_Visual_Novels vk:vk.com/graven_vn u:1184
@@ -138,14 +139,14 @@ ra_it
 	Hackathon_47_hours place:Ростов vk:vk.com/47hours p:419
 	; Hackathon_47_hours_6 vk:vk.com/47hours6 p:150
 	; Hotger vk:vk.com/hotger_rnd u:80
-	Inostudio vk:vk.com/inostudio u:1212
+	Inostudio vk:vk.com/inostudio u:1212 place:Таганрог
 	Inter-Web vk:vk.com/iwstudioru u:152
 	Intspirit vk:vk.com/intspirit u:217
 	; IT_квиз vk:vk.com/lighthouse_quiz p:54
 	IT_сообщество_ДГТУ vk:vk.com/it_dstu u:127
-	IT_сообщество_Новочеркасск vk:vk.com/it.novocherkassk u:199
+	IT_сообщество_Новочеркасск vk:vk.com/it.novocherkassk u:199 place:Новочеркасск
 	IT_сообщество_Ростов vk:vk.com/it_61 u:4630
-	IT_сообщество_Таганрог vk:vk.com/it.taganrog u:1011
+	IT_сообщество_Таганрог vk:vk.com/it.taganrog u:1011 place:Таганрог
 	IT_сообщество_ЮРГПУ vk:vk.com/club83529556 u:134
 	; IT_спорт vk:vk.com/event181966131 p:62
 	; IT_фабрика_компьютерных_гениев vk:vk.com/it_fabrika_rostov u:132
@@ -154,12 +155,12 @@ ra_it
 	IT_Premium vk:vk.com/it_premium_team u:328
 	IT_Standup_Online vk:vk.com/it_standup p:179
 	JDILab vk:vk.com/jdi_lab u:134
-	JS_Tgn_Weekends vk:vk.com/js_tgn u:248
+	JS_Tgn_Weekends vk:vk.com/js_tgn u:248 place:Таганрог
 	; Kinoplan_tech vk:vk.com/kinoplan.tech u:69
 	LetMeCode vk:vk.com/letmecodeteam u:180
 	; Leviossa vk:vk.com/leviossa_team u:75
 	Life-promo vk:vk.com/ia_lifepromo u:175
-	Lodoss vk:vk.com/lodossteam u:1474
+	Lodoss vk:vk.com/lodossteam u:1474 place:Таганрог
 	Macros_Group vk:vk.com/macros.group u:952
 	; Meetup_Angular_Ростов vk:vk.com/rostovng p:69
 	; Meetup_Data_science_Ростов vk:vk.com/dsmt61 p:64
@@ -184,7 +185,7 @@ ra_it
 	; Neutrino_Software vk:vk.com/neutrinosoft u:70
 	Newizze vk:vk.com/newizze u:496
 	NodaSoft vk:vk.com/nodasoft u:210
-	Oggetto vk:vk.com/oggettoweb u:1119
+	Oggetto vk:vk.com/oggettoweb u:1119 place:Таганрог
 	Opex_Analytics vk:vk.com/opexanalytics u:102
 	People_and_Culture_Meetup vk:vk.com/hr_meetup p:199
 	; PHP_Ростов vk:vk.com/rndphp u:32
@@ -208,16 +209,15 @@ ra_it
 	; Spacebar_курсы_программирования_Arduino vk:vk.com/spacebar.study p:79
 	; StartupTalks vk:vk.com/startuptalks u:68
 	Statzilla vk:vk.com/statzilla u:444
-	StepanovMax vk:vk.com/thestepanovmax u:330 
 	Storytelling_Software vk:vk.com/storytellingsoftware u:219
 	Stud_IT vk:vk.com/stud_it u:233
 	Suntegy vk:vk.com/suntegy u:186
 	; Taganrog_Mobile_Talks vk:vk.com/tgnit u:33
-	TagConf vk:vk.com/tagconf u:147
+	; TagConf vk:vk.com/tagconf u:147
 	TeamLead_Conference vk:vk.com/teamleadconference u:1161
 	TradingView vk:vk.com/tradingviewru u:707
 	TutMee vk:vk.com/tutmee u:718
-	UFOlogists_CTF_team vk:vk.com/ufoctf u:121
+	; UFOlogists_CTF_team vk:vk.com/ufoctf u:121
 	Umbrella_IT vk:vk.com/umbrellaitcom u:3001
 	Umbrella_Web vk:vk.com/umbrellaweb f:451
 	Usetech vk:vk.com/usetech_integration u:1246
@@ -232,7 +232,7 @@ ra_it
 	; Usergroup_NET_1 vk:vk.com/club334412 u:28
 	; Usergroup_NET_2 vk:vk.com/club731616 u:43
 	; Usergroup_Unity vk:vk.com/rostov_unity u:54
-	WebSailors vk:vk.com/websailors u:151
+	WebSailors vk:vk.com/websailors u:151 place:Таганрог
 	; WebAnt vk:vk.com/webant_rnd u:42
 	; WebNets vk:vk.com/webnets u:14
 	Webrocket vk:vk.com/webrocketpro u:968

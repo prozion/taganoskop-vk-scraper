@@ -203,8 +203,7 @@
 
 (define-catch (cache-posts
             #:source sources
-            #:write-to-cache cache-path
-            #:write? (write? #t)
+            #:target target-persistence
             #:read-depth (read-depth #f)
             #:ignore-with-status (ignore-with-status #t)
             #:ignore-sleepy (ignore-sleepy #t)
@@ -259,7 +258,7 @@
                       (single-file-cache-posts
                           #:source source
                           #:read-depth read-depth)))))
-      (when write? (write-data-to-file result cache-path))
+      (target-persistence result)
       #t))
 
 (define-catch (get-last-posts

@@ -18,7 +18,7 @@
 (define news_cards "")
 (define page-id "")
 
-(set-access-token ($ access_token vk/postagg3_1))
+(set-access-token ($ access_token vk/postagg1_1))
 
 (persistent h-galias-gid)
 (persistent tgn-posts)
@@ -47,7 +47,7 @@
   (parameterize ((Name-id-hash (h-galias-gid)))
     ; (cache-posts
     ;     #:source (list taganrog.tree)
-    ;     #:write-to-cache (_cache "tgn_posts.txt")
+    ;     #:target tgn-posts
     ;     #:ignore-with-status #t
     ;     #:ignore-sleepy #t
     ;     #:read-depth 10)
@@ -65,7 +65,7 @@
     ;     #:read-depth 10)
     (cache-posts
         #:source (list it.tree)
-        #:write-to-cache (_cache "it_posts.txt")
+        #:target it-posts
         #:ignore-with-status #t
         #:ignore-sleepy #t
         #:read-depth 10)
@@ -88,7 +88,11 @@
 ;   (--- (format "Читаем новые посты, обновляем кэш"))
 ;   (update-cache))
 
-(update-cache)
+(define noupdate-flag (indexof?
+                        (vector->list (current-command-line-arguments))
+                        "noupdate"))
+
+(when-not noupdate-flag (update-cache))
 
 (--- "Компилируем страницы сайта")
 
@@ -132,8 +136,6 @@
                     (filter-posts
                         (it-posts)
                         #:entities it-items
-                        #:trigger-expression '(++ event_future event_by_date)
-                        #:use-special-tags #t
                         #:within-days WITHIN_DAYS
                         #:min-symbols MIN_SYMBOLS)
                     #:entities it-items
