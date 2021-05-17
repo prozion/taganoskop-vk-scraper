@@ -27,14 +27,14 @@
 (persistent it-posts)
 
 (define Updates (make-parameter (hash)))
-(Updates (if (file-exists? "../_cache/page_updates.txt")
-                (read-serialized-data-from-file "../_cache/page_updates.txt")
+(Updates (if (file-exists? (_cache "page_updates.txt"))
+                (read-serialized-data-from-file (_cache "page_updates.txt"))
                 (hash)))
 
 (define taganrog.tree "../knowledge/taganrog.tree")
 ; (define rnd.tree "../knowledge/rostov.tree")
 ; (define south.tree "../knowledge/south.tree")
-(define it.tree "../knowledge/taganrog.tree")
+(define it.tree "../knowledge/it.tree")
 
 (define tgn-items (get-entities taganrog.tree))
 ; (define rnd-items (get-entities rnd.tree))
@@ -47,7 +47,7 @@
   (parameterize ((Name-id-hash (h-galias-gid)))
     (cache-posts
         #:source (list taganrog.tree)
-        #:write-to-cache "/var/cache/projects/taganoskop/tgn_posts.txt"
+        #:write-to-cache (_cache "tgn_posts.txt")
         #:ignore-with-status #t
         #:ignore-sleepy #t
         #:read-depth 10)
@@ -65,7 +65,7 @@
     ;     #:read-depth 10)
     (cache-posts
         #:source (list it.tree)
-        #:write-to-cache "/var/cache/projects/taganoskop/it_posts.txt"
+        #:write-to-cache (_cache "it_posts.txt")
         #:ignore-with-status #t
         #:ignore-sleepy #t
         #:read-depth 10)
@@ -144,7 +144,7 @@
 (set! PAGES (get-sitemap #:only-visible-pages? #t))
 (update-page 'Sitemap #:template "sitemap.xml" #:gen-ext "xml")
 
-(write-data-to-file (Updates) "../_cache/page_updates.txt")
+(write-data-to-file (Updates) (_cache "page_updates.txt"))
 
 ; trigger uploading the new files onto cpu.denis-shirshov.ru server:
 ; (-s (get-url "http://taganrog.online/updater.php"))

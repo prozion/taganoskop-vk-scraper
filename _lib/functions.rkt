@@ -20,6 +20,9 @@
 (define Name-id-hash (make-parameter (hash)))
 (define Debug (make-parameter #f))
 
+(define (_cache filename)
+  (format "/var/cache/projects/taganoskop/~a" filename))
+
 (define-macro (** . xs)
   `(let* ((expanded-arguments (map
                                 (λ (x)

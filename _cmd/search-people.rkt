@@ -25,8 +25,8 @@
 (persistent uids-selected)
 
 (define Updates (make-parameter (hash)))
-(Updates (if (file-exists? "../_cache/page_updates.txt")
-                (read-serialized-data-from-file "../_cache/page_updates.txt")
+(Updates (if (file-exists? (_cache "page_updates.txt"))
+                (read-serialized-data-from-file (_cache "page_updates.txt"))
                 (hash)))
 
 (define taganrog.tree "../knowledge/taganrog.tree")
