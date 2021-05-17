@@ -20,6 +20,8 @@
 
 (set-access-token ($ access_token vk/postagg3_1))
 
+(--- "access token:" (_AT))
+
 (persistent h-galias-gid)
 (persistent tgn-posts)
 ; (persistent rnd-posts)
