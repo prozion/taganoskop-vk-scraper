@@ -10,7 +10,7 @@ function load_page($filename, $writedir) {
   fclose($handle);
 }
 
-load_page("tgn.html", "");
+load_page("index.html", "");
 // load_page("rnd.html", "");
 // load_page("south.html", "");
 // load_page("it.html", "");

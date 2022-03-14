@@ -106,7 +106,7 @@
                         #:min-symbols MIN_SYMBOLS)
                     #:entities tgn-items
                     ))
-(update-page 'Tgn #:note "Таганрог" #:template "news")
+(update-page 'Tgn #:note "Таганрог" #:template "news" #:filename "index.html")
 
 ; (set! news_cards (make-cards
 ;                     (filter-posts

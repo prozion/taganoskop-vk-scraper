@@ -49,16 +49,17 @@
         #:cache-write-frequency 50
         )))
 
-(define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html"))
+(define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html") #:filename (filename #f))
   (unless (empty-string? note) (--- (str "\n" note)))
   (set! page-id page_id)
   (let* ((page-id-string (string-downcase (->string page-id)))
+        (file-to-write (or filename (str page-id-string "." gen-ext)))
         (server-path "../../racket_server/pages/taganoskop/")
         (template-name (or template-name page-id-string))
         (processed-template (process-html-template (format "../_templates/~a.t" template-name) #:tabtree-root "../knowledge" #:namespace ns)))
     (Updates (hash-union (hash page-id (cur-y-m-d)) (Updates)))
-    (write-file (format "../www/~a.~a" page-id-string gen-ext) processed-template)
-    (-s (write-file (format "~a~a.~a" server-path page-id-string gen-ext) processed-template))))
+    (write-file (format "../www/~a" file-to-write) processed-template)
+    (-s (write-file (format "~a~a" server-path file-to-write) processed-template))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
