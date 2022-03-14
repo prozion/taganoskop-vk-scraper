@@ -2,8 +2,8 @@
 
 (require compatibility/defmacro)
 (require odysseus)
-(require tabtree)
-(require tabtree/utils)
+(require tabtree/tabtree1)
+(require tabtree/utils1)
 (require tabtree/template-functions)
 (require odysseus/api/vk)
 (require "globals.rkt")
@@ -220,7 +220,6 @@
           (entitites (if ignore-with-status
                         (filter-not (λ (entity) ($* s entity)) entities)
                         entities))
-          (entities-ids (map (λ (entity) ($ id entity)) entities))
 
           (_ (--- (format "\nОбновляем кэш. Сканируем ~a ~a из списка ~a:"
                             (length entities)
@@ -343,7 +342,7 @@
                                         'title (lshift (string-replace ($ text post) "\t" "") 80)
                                         'gid group-id
                                         'uid user-id
-                                        'entity-id (and entity ($ id entity))
+                                        'entity-id (and entity ($ __id entity))
                                         'place place
                                         'url (if group-id
                                                 (format "https://vk.com/wall-~a_~a" group-id ($ id post))
@@ -395,7 +394,7 @@
         (trigger-aliases
           (let* (
                 (triggers ($3 triggers (parse-tab-tree "../knowledge/_triggers.tree")))
-                (trigger_id_values (for/hash ((trigger triggers)) (values ($ id trigger) ($ v trigger)))))
+                (trigger_id_values (for/hash ((trigger triggers)) (values ($ __id trigger) ($ v trigger)))))
                             trigger_id_values ))
         ; filter by publication date
         (posts (filter-not
@@ -473,6 +472,9 @@
     (if (file-exists? filepath)
       filename
       #f)))
+
+(define-catch (get-title p (default-title ""))
+  (or ($ title p) default-title))
 
 ; в частности для прибавления приставки "Паркран" при именовании паркранов
 (define-catch (get-source-title p c (default-title ""))

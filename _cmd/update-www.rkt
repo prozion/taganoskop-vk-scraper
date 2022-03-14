@@ -1,7 +1,7 @@
 #lang racket
 
 (require odysseus)
-(require tabtree)
+(require tabtree/tabtree1)
 (require tabtree/template-functions)
 (require tabtree/html)
 (require odysseus/api/vk)
@@ -18,7 +18,7 @@
 (define news_cards "")
 (define page-id "")
 
-(set-access-token ($ access_token vk/postagg1_1))
+(set-access-token ($ access_token vk/postagg2_1))
 
 (persistent h-galias-gid)
 (persistent tgn-posts)
@@ -63,12 +63,12 @@
     ;     #:ignore-with-status #t
     ;     #:ignore-sleepy #t
     ;     #:read-depth 10)
-    (cache-posts
-        #:source (list it.tree)
-        #:target it-posts
-        #:ignore-with-status #t
-        #:ignore-sleepy #t
-        #:read-depth 10)
+    ; (cache-posts
+    ;     #:source (list it.tree)
+    ;     #:target it-posts
+    ;     #:ignore-with-status #t
+    ;     #:ignore-sleepy #t
+    ;     #:read-depth 10)
   #t))
 
 (define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html"))
@@ -132,24 +132,24 @@
 ;                     ))
 ; (update-page 'South #:note "Южный регион" #:template "news")
 
-(set! news_cards (make-cards
-                    (filter-posts
-                        (it-posts)
-                        #:entities it-items
-                        #:within-days WITHIN_DAYS
-                        #:min-symbols MIN_SYMBOLS)
-                    #:entities it-items
-                    ))
-(update-page 'It #:note "IT Сообщество" #:template "news")
-
-
-(set! PAGES (get-sitemap #:only-visible-pages? #t))
-(update-page 'Sitemap #:template "sitemap.xml" #:gen-ext "xml")
+; (set! news_cards (make-cards
+;                     (filter-posts
+;                         (it-posts)
+;                         #:entities it-items
+;                         #:within-days WITHIN_DAYS
+;                         #:min-symbols MIN_SYMBOLS)
+;                     #:entities it-items
+;                     ))
+; (update-page 'It #:note "IT Сообщество" #:template "news")
+;
+;
+; (set! PAGES (get-sitemap #:only-visible-pages? #t))
+; (update-page 'Sitemap #:template "sitemap.xml" #:gen-ext "xml")
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
 
-; trigger uploading the new files onto cpu.denis-shirshov.ru server:
-; (-s (get-url "http://taganrog.online/updater.php"))
-(get-url "http://taganrog.online/updater.php")
+; trigger uploading the new files onto taganoskop.denis-shirshov.ru server:
+; (-s (get-url "https://taganoskop.ru/updater.php"))
+(get-url "http://taganoskop.ru/updater.php")
 
 (--- (format "~a Конец компиляции~n~n" (timestamp)))

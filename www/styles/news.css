@@ -1,0 +1,36 @@
+.card { background: white; padding: 0 0 0.5rem 0; margin: 15px auto 15px auto; width: 100%; box-shadow: 0px 5px 10px -5px #114D59; }
+/* border: solid #114D59; border-width: 0 0 3px 0; */
+.ad { background: #fed; font-size: larger; line-height: 2.2rem; padding: 1rem 0; }
+.card h2 { line-height: 2.2rem; }
+.image { margin: 0; width: 100%; vertical-align: top; }
+.image img { width: 100%; border: solid #f0f0f0; border-width: 0 0 30px 0;  }
+.ad .image img { width: 100%; max-width: 400px; border: 0;  }
+.ad .info { position: relative; top: -1rem; }
+.info { margin: 0 2.5rem 0 1.5rem; display: inline-block; width: 85%; overflow: hidden; }
+.date_strip { padding: 0.1rem 0 0.1rem 14px; background: #f0f0f0; color: #333; }
+.date { font-weight: bold; }
+.time { font-weight: normal; }
+.place { color: #666; margin: 1.5rem 0; font-weight: normal; font-size: 1.3em; }
+.statistics_line { margin-top: 1.5rem; color: #6F86AC; font-weight: bold;  }
+.statistics_line img.icon { position: relative; width: 1.2rem; margin-right: 0.2rem; top: 0.2rem;}
+.statistics_line .number { margin-left: 0.1rem; margin-right: 1.5rem; }
+.readnext { margin-top: 1.5rem; font-weight: bold; }
+.container { width: 100%; }
+footer { margin: 0 auto;  }
+
+@media (min-width: 700px) {
+  .container { width: 80%; }
+  footer { width: 80%; }
+  .info { width: 50%; }
+  .image { display: inline-block; width: 30%; margin: 0 1rem; padding-top: 1.9rem; }
+  .image img { width: 100%; }
+}
+
+@media (min-width: 1400px) {
+  .container { width: 55%; }
+  footer { width: 55%; }
+  .info { width: 45%; }
+  .image { width: 35%; }
+  .image img { width: 100%; }
+  .date_strip { padding-left: 346px; }
+}
