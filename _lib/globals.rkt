@@ -57,4 +57,4 @@
 ; cache directory for persistent data:
 ; (define CACHE_DIR "_cache")
 (define CACHE_DIR "/var/cache/projects/taganoskop")
-(define SERVER_DIR "/var/www/html/taganoskop")
+(define SERVER_DIR "/var/www/domains/taganoskop.denis-shirshov.ru")
