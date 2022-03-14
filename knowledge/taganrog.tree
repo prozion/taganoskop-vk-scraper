@@ -1,63 +1,72 @@
-неклиновский_район
-	Точка_памяти vk:vk.com/tochkapamyati u:30
-	Туризм_в_Неклиновском_районе vk:vk.com/neklinovskiy u:217
+; неклиновский_район
+; 	Точка_памяти vk:vk.com/tochkapamyati u:30
+; 	Туризм_в_Неклиновском_районе vk:vk.com/neklinovskiy u:217
 таганрог
 	; Активатор vk:vk.com/vk.cc80aoxo u:271
 	Антикафе_Вагон_времени vk:vk.com/vagon.vremeni u:66
 	Арт_свалка vk:vk.com/art.svalka_tgn p:31
-	Афиша_музыкального_общества_Юг vk:vk.com/afisha_moyoug p:377
+	Музыкальное_общество_Юг vk:vk.com/afisha_moyoug p:377
 	Бесплатные_экскурсии_по_Таганрогу_и_окрестностям vk:vk.com/event121639134 u:483
 	Библиотека_имени_Чехова vk:vk.com/bibl_chehova u:1156
-	; Блокнот_Таганрог vk:vk.com/bloknottaganrog u:5437
-	Валентина_Депта vk:vk.com/depta_v f:403
-	ВелоТаганрог vk:vk.com/velotaganrog u:2603
-	Витамин_Роста vk:vk.com/club342123 u:1336
-	Волонтерское_движение_Совы vk:vk.com/vdsovi u:44
-	Дом_Бабушкина_54А vk:vk.com/babushkina54a u:46
-	Екатерина_Рязанова vk:vk.com/id30194544 f:360
-	Жизнь_Таганрога vk:vk.com/taganroglifestyle u:121
-	ЖК_Андреевский vk:vk.com/info_andreevskii u:589
-	Заварочная_Горький_Мао vk:vk.com/bittermao u:681
-	Интересные_события_Таганрога vk:vk.com/funtagan u:3848
-	Ирина_Целых vk:vk.com/tselykhli f:621
-	Источник vk:vk.com/spring.inspiration u:584
-	Клуб_гуманитарного_самообразования vk:vk.com/taganrog.culture p:197
-	Мир_Лукоморья vk:vk.com/mir_lykomorie u:1168
-	Наталья_Пугаева vk:vk.com/id159464142 f:129
-	Никольский_храм_Таганрога vk:vk.com/nikolkacentr u:621
-	Легенда vk:vk.com/club57239984 u:537
-	На_зеленых_волнах vk:vk.com/graenum_oldum u:54
-	Общее_дело vk:vk.com/obsheedelotaganrog u:1450
-	Открытые_сердца vk:vk.com/club63270152 u:505
-	Открытый_мир_культуры_Таганрога vk:vk.com/lukomorye.taganrog u:771
-	Парк_Горького vk:vk.com/sk_dd u:2958
-	Партия_любителей_старого_кладбища vk:vk.com/churchyard u:1141
-	Приветы_Советам vk:vk.com/sovetamprivet p:263
-	Рабочее_Место vk:vk.com/koworking_office u:1003
-	Сделаем_Таганрог vk:vk.com/sdelaemtaganrog p:66
-	Совместные_пробежки vk:vk.com/tusobeg u:42
-	Студенческий_информационный_центр_ИТА_ЮФУ vk:vk.com/sic_sfedu_ita u:2148
-	Таганрогская_правда vk:vk.com/taganrogprav u:4963
-	Таганрогский_камерный_театр vk:vk.com/tagteatr u:2380
-	Таганрогский_музей_заповедник vk:vk.com/tgliamz u:950
-	Таганрогский_художественный_музей_1 vk:vk.com/artmuseumtgn u:1447
-	Таганрогский_художественный_музей_2 vk:vk.com/tagmusey u:618
-	Таганрогское_IT_сообщество vk:vk.com/it.taganrog u:1010
-	; Таганрог_Cобытия_Люди vk:vk.com/gorodtag u:3279
-	Таймкафе_Каменка vk:vk.com/timeclubkamenka u:5946
-	Таймкафе_У_тети_Sони vk:vk.com/utetisoni_taganrog u:348
-	Таймкофейня_New_York_Coffee vk:vk.com/timekofeinia u:7546
-	Театр_Чехова vk:vk.com/theatrechehova u:7906
-	Точка_кипения_Таганрог vk:vk.com/pointtaganrog u:319
-	ТРЦ_Арбуз vk:vk.com/arbuz_taganrog u:10927
-	ТРЦ_Мармелад vk:vk.com/marmeladmall u:46506
-	УК_Континент vk:vk.com/public180982022 u:65
-	Умный_кубик vk:vk.com/smart_brick u:1289
-	Хороводы_Таганрога vk:vk.com/skazka_tagan u:363
-	Четкая_грань vk:vk.com/sxetaganrog u:207
-	Экопункт_на_Русском_поле vk:vk.com/rp.ecotaganrog u:218
-	Brainfest_HUMAN vk:vk.com/brainfest_human p:41
-	Brainhorn vk:vk.com/brainhorn u:285
-	Daily_Bogudonia vk:vk.com/daily_bogudonia u:1057
-	Fabrika_Bar vk:vk.com/fabrika_space u:1887
-	Jazz_Up vk:vk.com/jazzupdance u:577
+	; ; Блокнот_Таганрог vk:vk.com/bloknottaganrog u:5437
+	; Валентина_Депта vk:vk.com/depta_v f:403
+	; ВелоТаганрог vk:vk.com/velotaganrog u:2603
+	; Витамин_Роста vk:vk.com/club342123 u:1336
+	; Волонтерское_движение_Совы vk:vk.com/vdsovi u:44
+	; Заварочная_Горький_Мао vk:vk.com/bittermao u:849
+	; Дом_Бабушкина_54А vk:vk.com/babushkina54a u:46
+	; Екатерина_Рязанова vk:vk.com/id30194544 f:360
+	; Жизнь_Таганрога vk:vk.com/taganroglifestyle u:121
+	; ЖК_Андреевский vk:vk.com/info_andreevskii u:589
+	; Заварочная_Горький_Мао vk:vk.com/bittermao u:681
+	; Интересные_события_Таганрога vk:vk.com/funtagan u:3848
+	; Ирина_Целых vk:vk.com/tselykhli f:621
+	; Источник vk:vk.com/spring.inspiration u:584
+	; Квест_экскурсии_Таинственный_Таганрог vk:vk.com/kvest_tagan u:
+	; Клуб_гуманитарного_самообразования vk:vk.com/taganrog.culture p:197
+	; Мир_Лукоморья vk:vk.com/mir_lykomorie u:1168
+	; Наталья_Пугаева vk:vk.com/id159464142 f:129
+	; Никольский_храм_Таганрога vk:vk.com/nikolkacentr u:621
+	; Легенда vk:vk.com/club57239984 u:537
+	; На_зеленых_волнах vk:vk.com/graenum_oldum u:54
+	; Общее_дело vk:vk.com/obsheedelotaganrog u:1450
+	; Окружение_красивая_жизнь_своими_руками vk:vk.com/okruzhenie.taganrog u:234
+	; Открытые_сердца vk:vk.com/club63270152 u:505
+	; Открытый_мир_культуры_Таганрога vk:vk.com/lukomorye.taganrog u:771
+	; Парк_Горького vk:vk.com/sk_dd u:2958
+	; Партия_любителей_старого_кладбища vk:vk.com/churchyard u:1141
+	; Приветы_Советам vk:vk.com/sovetamprivet p:263
+	; Рабочее_Место vk:vk.com/koworking_office u:1003
+	; Сделаем_Таганрог vk:vk.com/sdelaemtaganrog p:66
+	; СКЦ_Приморский vk:vk.com/club57587488 u:804
+	; Совместные_пробежки vk:vk.com/tusobeg u:42
+	; Студенческий_информационный_центр_ИТА_ЮФУ vk:vk.com/sic_sfedu_ita u:2148
+	; Cтуденческий_клуб vk:vk.com/studclub_tgn u:3655
+	; Таганрогская_правда vk:vk.com/taganrogprav u:4963
+	; Таганрогский_камерный_театр vk:vk.com/tagteatr u:2380
+	; Таганрогский_музей_заповедник vk:vk.com/tgliamz u:950
+	; Таганрогский_художественный_музей_1 vk:vk.com/artmuseumtgn u:1447
+	; Таганрогский_художественный_музей_2 vk:vk.com/tagmusey u:618
+	; Таганрогское_IT_сообщество vk:vk.com/it.taganrog u:1010
+	; ; Таганрог_Cобытия_Люди vk:vk.com/gorodtag u:3279
+	; Таймкафе_Каменка vk:vk.com/timeclubkamenka u:5946
+	; Таймкафе_У_тети_Sони vk:vk.com/utetisoni_taganrog u:348
+	; Таймкофейня_New_York_Coffee vk:vk.com/timekofeinia u:7546
+	; Театральная_студия_пластического_движения vk:vk.com/studiya_32 u:1149
+	; Театр_Волшебный_фонарь vk:vk.com/nt_volshebniy_fonar u:190
+	; Театр_Лемакс vk:vk.com/lemax_theater u:364
+	; Театр_Чехова vk:vk.com/theatrechehova u:7906
+	; Точка_кипения_Таганрог vk:vk.com/pointtaganrog u:319
+	; ТРЦ_Арбуз vk:vk.com/arbuz_taganrog u:10927
+	; ТРЦ_Мармелад vk:vk.com/marmeladmall u:46506
+	; УК_Континент vk:vk.com/public180982022 u:65
+	; Умный_кубик vk:vk.com/smart_brick u:1289
+	; Хороводы_Таганрога vk:vk.com/skazka_tagan u:363
+	; Четкая_грань vk:vk.com/sxetaganrog u:207
+	; Экопункт_на_Русском_поле vk:vk.com/rp.ecotaganrog u:218
+	; ; ARТаганрог vk:vk.com/artaganrog u:568
+	; Brainfest_HUMAN vk:vk.com/brainfest_human p:41
+	; Brainhorn vk:vk.com/brainhorn u:285
+	; Daily_Bogudonia vk:vk.com/daily_bogudonia u:1057
+	; Fabrika_Bar vk:vk.com/fabrika_space u:1887
+	; Jazz_Up vk:vk.com/jazzupdance u:577

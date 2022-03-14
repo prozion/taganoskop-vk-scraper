@@ -150,6 +150,6 @@
 
 ; trigger uploading the new files onto taganoskop.denis-shirshov.ru server:
 ; (-s (get-url "https://taganoskop.ru/updater.php"))
-(get-url "http://taganoskop.ru/updater.php")
+(get-url "https://taganoskop.ru/updater.php")
 
 (--- (format "~a Конец компиляции~n~n" (timestamp)))
