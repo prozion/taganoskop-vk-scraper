@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
-Redirect /index.html /tgn.html
+# Redirect /index.html /tgn.html
 # Additional sources to take posts from:
 Redirect /sources https://docs.google.com/spreadsheets/d/1Fw37A-PkPAeq7rZF3dtmXxXETS8kOJz_KYBLmxEP7ZQ
 

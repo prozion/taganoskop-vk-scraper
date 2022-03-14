@@ -71,14 +71,15 @@
     ;     #:read-depth 10)
   #t))
 
-(define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html"))
+(define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html") #:filename (filename #f))
   (unless (empty-string? note) (--- (str "\n" note)))
   (set! page-id page_id)
   (let* ((page-id-string (string-downcase (->string page-id)))
+        (file-to-write (or filename (str page-id-string "." gen-ext)))
         (template-name (or template-name page-id-string))
         (processed-template (process-html-template (format "../_templates/~a.t" template-name) #:tabtree-root "../knowledge" #:namespace ns)))
     (Updates (hash-union (hash page-id (cur-y-m-d)) (Updates)))
-    (write-file (format "~a/~a.~a" SERVER_DIR page-id-string gen-ext) processed-template)))
+    (write-file (format "~a/~a" SERVER_DIR file-to-write) processed-template)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
