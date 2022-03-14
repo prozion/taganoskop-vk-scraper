@@ -6,7 +6,7 @@
 			description:"Агрегатор постов о предстоящих событиях в Таганроге"
 			keywords:"агрегатор постов,агрегатор анонсов"
 			h1:"События в Таганроге"
-			path:tgn.html 
+			path:index.html 
 			changefreq:daily
 			n:1
 		<.>
