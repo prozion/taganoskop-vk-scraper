@@ -118,7 +118,6 @@
   (cond
     ((not expr) #f)
     ((empty? expr) #f)
-    ((equal? expr 'identity) #t)
     ((list? expr)
       (or
         (equal? (car expr) '**)

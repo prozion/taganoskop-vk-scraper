@@ -38,7 +38,8 @@
         (template-name (or template-name page-id-string))
         (processed-template (process-html-template (format "../_templates/~a.t" template-name) #:tabtree-root "../knowledge" #:namespace ns)))
     (Updates (hash-union (hash page-id (cur-y-m-d)) (Updates)))
-    (write-file (format "~a/~a" SERVER_DIR file-to-write) processed-template)))
+    (write-file (format "~a/~a" SERVER_DIR file-to-write) processed-template)
+    ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -83,7 +84,7 @@
 (when-not (is-flag? "no-taganrog")
   (generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t))
 (when-not (is-flag? "no-history")
-  (generate-page history identity "История Таганрога" "history.html" #t))
+  (generate-page history (++ everything) "История Таганрога" "history.html" #t))
 ; (generate-page it identity "IT-сообщество" "it.html" #t)
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
