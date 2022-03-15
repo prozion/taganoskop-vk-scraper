@@ -22,54 +22,13 @@
 (set-access-token ($ access_token vk/postagg2_1))
 
 (persistent h-galias-gid)
-; (persistent tgn-posts)
-; ; (persistent rnd-posts)
-; ; (persistent south-posts)
-; (persistent it-posts)
 
 (define Updates (make-parameter (hash)))
 (Updates (if (file-exists? (_cache "page_updates.txt"))
                 (read-serialized-data-from-file (_cache "page_updates.txt"))
                 (hash)))
 
-; (define taganrog.tree "../knowledge/taganrog.tree")
-; (define history_taganrog.tree "../knowledge/history_taganrog.tree")
-; ; (define rnd.tree "../knowledge/rostov.tree")
-; (define it.tree "../knowledge/it.tree")
-
-; (define tgn-items (get-entities taganrog.tree))
-; ; (define rnd-items (get-entities rnd.tree))
-; (define history-items (get-entities history_taganrog.tree))
-; (define it-items (get-entities it.tree))
-
 (define PAGES (get-sitemap))
-
-; (define-catch (update-cache)
-;   (parameterize ((Name-id-hash (h-galias-gid)))
-;     ; (cache-posts
-;     ;     #:source (list taganrog.tree)
-;     ;     #:target tgn-posts
-;     ;     #:ignore-with-status #t
-;     ;     #:ignore-sleepy #t
-;     ;     #:read-depth 10)
-;     ; (cache-posts
-;     ;     #:source (list rnd.tree)
-;     ;     #:write-to-cache "../_cache/rnd_posts.txt"
-;     ;     #:ignore-with-status #t
-;     ;     #:ignore-sleepy #t
-;     ;     #:read-depth 10)
-;     (cache-posts
-;         #:source (list history_taganrog.tree)
-;         #:ignore-with-status #t
-;         #:ignore-sleepy #t
-;         #:read-depth 10)
-;     ; (cache-posts
-;     ;     #:source (list it.tree)
-;     ;     #:target it-posts
-;     ;     #:ignore-with-status #t
-;     ;     #:ignore-sleepy #t
-;     ;     #:read-depth 10)
-;   #t))
 
 (define-catch (update-page page_id #:note (note "") #:template (template-name #f) #:gen-ext (gen-ext "html") #:filename (filename #f))
   (unless (empty-string? note) (--- (str "\n" note)))
@@ -85,15 +44,10 @@
 
 (--- (format "~a: Обновляем контент сайта" (timestamp)))
 
-; (-s
-;   (--- (format "Читаем новые посты, обновляем кэш"))
-;   (update-cache))
-
-(define noupdate-flag (indexof?
-                        (vector->list (current-command-line-arguments))
-                        "noupdate"))
-
-; (when-not noupdate-flag (update-cache))
+(define (is-flag? flag)
+  (indexof?
+    (vector->list (current-command-line-arguments))
+    flag))
 
 (define-macro (generate-page page-id trigger-expr note filename to-cache?)
   (let* ((tree-file-name (string->symbol (format "~a.tree" (symbol->string page-id))))
@@ -126,58 +80,9 @@
 
 (--- "Компилируем страницы сайта")
 
-; (generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t)
+(generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t)
 (generate-page history identity "История Таганрога" "history.html" #t)
-
-; (set! news_cards (make-cards
-;                     (filter-posts
-;                         (tgn-posts)
-;                         #:entities tgn-items
-;                         #:trigger-expression '(++ event_future event_by_date)
-;                         #:use-special-tags #t
-;                         #:within-days WITHIN_DAYS
-;                         #:min-symbols MIN_SYMBOLS)
-;                     #:entities tgn-items
-;                     ))
-; (update-page 'Tgn #:note "Таганрог" #:template "news" #:filename "index.html")
-
-; (set! news_cards (make-cards
-;                     (filter-posts
-;                         (rnd-posts)
-;                         #:entities rnd-items
-;                         #:trigger-expression '(++ event_future event_by_date)
-;                         #:use-special-tags #t
-;                         #:within-days WITHIN_DAYS
-;                         #:min-symbols MIN_SYMBOLS)
-;                     #:entities rnd-items
-;                     ))
-; (update-page 'Rnd #:note "Ростовская агломерация" #:template "news")
-;
-; (set! news_cards (make-cards
-;                     (filter-posts
-;                         (south-posts)
-;                         #:entities south-items
-;                         #:trigger-expression '(++ event_future event_by_date)
-;                         #:use-special-tags #t
-;                         #:within-days WITHIN_DAYS
-;                         #:min-symbols MIN_SYMBOLS)
-;                     #:entities south-items
-;                     ))
-; (update-page 'South #:note "Южный регион" #:template "news")
-
-; (set! news_cards (make-cards
-;                     (filter-posts
-;                         (it-posts)
-;                         #:entities it-items
-;                         #:within-days WITHIN_DAYS
-;                         #:min-symbols MIN_SYMBOLS)
-;                     #:entities it-items
-;                     ))
-; (update-page 'It #:note "IT Сообщество" #:template "news")
-;
-;
-; (set! PAGES (get-sitemap #:only-visible-pages? #t))
-; (update-page 'Sitemap #:template "sitemap.xml" #:gen-ext "xml")
+; (generate-page it identity "IT-сообщество" "it.html" #t)
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
 

@@ -3,6 +3,7 @@
   <head>
     <!-- %%(str "timestamp: " (timestamp))%% -->
     %%(define page (@id page-id PAGES))%%
+    %%(--- PAGES page-id page)%%
     %%(standard-head-part
         #:title ($ title page)
         #:description ($ description page)
