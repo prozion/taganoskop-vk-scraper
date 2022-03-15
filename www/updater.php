@@ -12,7 +12,7 @@ function load_page($filename, $writedir) {
 
 load_page("index.html", "");
 load_page("history.html", "");
-// load_page("it.html", "");
+load_page("it.html", "");
 
 // load_page("sitemap.xml", "");
 
