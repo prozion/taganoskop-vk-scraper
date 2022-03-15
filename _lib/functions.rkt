@@ -118,9 +118,9 @@
   (cond
     ((not expr) #f)
     ((empty? expr) #f)
+    ((equal? expr 'identity) #t)
     ((list? expr)
       (or
-        ; (equal? (car expr) 'identity)
         (equal? (car expr) '**)
         (equal? (car expr) '--)
         (equal? (car expr) '++)))

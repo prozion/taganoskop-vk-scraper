@@ -80,8 +80,10 @@
 
 (--- "Компилируем страницы сайта")
 
-(generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t)
-(generate-page history identity "История Таганрога" "history.html" #t)
+(when-not (is-flag? "no-taganrog")
+  (generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t))
+(when-not (is-flag? "no-history")
+  (generate-page history identity "История Таганрога" "history.html" #t))
 ; (generate-page it identity "IT-сообщество" "it.html" #t)
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
