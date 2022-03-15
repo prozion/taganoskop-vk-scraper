@@ -120,6 +120,7 @@
     ((empty? expr) #f)
     ((list? expr)
       (or
+        ; (equal? (car expr) 'identity)
         (equal? (car expr) '**)
         (equal? (car expr) '--)
         (equal? (car expr) '++)))
