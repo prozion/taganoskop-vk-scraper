@@ -60,7 +60,7 @@
         (cond
           ((boolean? y) y)
           ((trigger-expression? y) (eval y))
-          (else (--- 2222 y (match-words? (Text) y)) (match-words? (Text) y))))))
+          (else (match-words? (Text) y))))))
 
 (define (user? entity)
   (and
