@@ -4,7 +4,7 @@ triggers
 	event_past v:"состоялся//провели//был проведен"
 	everything v:".*"
 	history v:"Таганрог//истори\S+"
-	not_history v:"г\.\s?Таганрог.?[,\.»]//₽//г\. Таганрог"
+	not_history v:"г\.\s?Таганрог.?[,\.»]//₽//отзыв в нашем//Подписывайтесь на"
 	it_terms_of_interest v:"Java//JVM//Clojure//Lisp//Scheme//SICP//онтолог//RDF//функционально..? программировани//митап//semantic web"
 	running v:"пробежк//беговые"
 	volunteers v:"волонт.р//субботник"
