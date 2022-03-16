@@ -50,7 +50,7 @@
     (vector->list (current-command-line-arguments))
     flag))
 
-(define-macro (generate-page page-id trigger-expr note filename to-cache?)
+(define-macro (generate-page page-id trigger-expr note within-days min-symbols filename to-cache?)
   (let* ((tree-file-name (string->symbol (format "~a.tree" (symbol->string page-id))))
         (all-posts-cache-var (string->symbol (format "~a-posts" (string-downcase (symbol->string page-id)))))
         (group-items-var (string->symbol (format "~a-items" (string-downcase (symbol->string page-id)))))
@@ -72,8 +72,8 @@
                                   #:entities ,group-items-var
                                   #:trigger-expression ',trigger-expr
                                   #:use-special-tags #t
-                                  #:within-days WITHIN_DAYS
-                                  #:min-symbols MIN_SYMBOLS)
+                                  #:within-days ,within-days
+                                  #:min-symbols ,min-symbols)
                               #:entities ,group-items-var
                               ))
           (update-page ',page-id #:note ,note #:template "news" #:filename ,filename)))))
@@ -82,11 +82,11 @@
 (--- "Компилируем страницы сайта")
 
 (when-not (is-flag? "no-taganrog")
-  (generate-page taganrog (++ event_future event_by_date) "Таганрог" "index.html" #t))
+  (generate-page taganrog (++ event_future event_by_date) "Таганрог" WITHIN_DAYS MIN_SYMBOLS "index.html" #t))
 (when-not (is-flag? "no-history")
-  (generate-page history (++ everything) "История Таганрога" "history.html" #t))
+  (generate-page history (++ everything) "История Таганрога" (+ WITHIN_DAYS 60) 100 "history.html" #t))
 (when-not (is-flag? "no-it")
-  (generate-page it (++ it_terms_of_interest everything) "IT-сообщество" "it.html" #t))
+  (generate-page it (++ it_terms_of_interest everything) "IT-сообщество" WITHIN_DAYS MIN_SYMBOLS "it.html" #t))
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
 
