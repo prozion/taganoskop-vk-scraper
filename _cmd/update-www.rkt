@@ -81,12 +81,12 @@
 
 (--- "Компилируем страницы сайта")
 
-(when-not (is-flag? "no-taganrog")
-  (generate-page taganrog (++ event_future event_by_date) "Таганрог" WITHIN_DAYS MIN_SYMBOLS "index.html" #t))
+; (when-not (is-flag? "no-taganrog")
+;   (generate-page taganrog (++ event_future event_by_date) "Таганрог" WITHIN_DAYS MIN_SYMBOLS "index.html" #t))
 (when-not (is-flag? "no-history")
   (generate-page history (** (-- not_history) history) "История Таганрога" (+ WITHIN_DAYS 60) 100 "history.html" #t))
-(when-not (is-flag? "no-it")
-  (generate-page it (++ it_terms_of_interest everything) "IT-сообщество" WITHIN_DAYS MIN_SYMBOLS "it.html" #t))
+; (when-not (is-flag? "no-it")
+;   (generate-page it (++ it_general_terms local) "IT-сообщество" WITHIN_DAYS MIN_SYMBOLS "it.html" #t))
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
 
