@@ -1,3 +1,3 @@
 #! /bin/bash
 
-racket update-www.rkt no-it
+racket /home/denis/projects/taganoskop/update-www.rkt no-it
