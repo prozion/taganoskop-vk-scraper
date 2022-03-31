@@ -8,7 +8,7 @@
 
 (define MAX_SYMBOLS 1200)
 (define MIN_SYMBOLS 200)
-(define WITHIN_DAYS 7)
+(define WITHIN_DAYS 10)
 (define DEFAULT_PLACE #f)
 
 (define month-abbrs
