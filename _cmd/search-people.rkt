@@ -54,7 +54,7 @@
   (set! page-id page_id)
   (let* ((page-id-string (string-downcase (->string page-id)))
         (file-to-write (or filename (str page-id-string "." gen-ext)))
-        (server-path "../../racket_server/pages/taganoskop/")
+        (server-path "/home/denis/projects/taganoskop/www/")
         (template-name (or template-name page-id-string))
         (processed-template (process-html-template (format "../_templates/~a.t" template-name) #:tabtree-root "../knowledge" #:namespace ns)))
     (Updates (hash-union (hash page-id (cur-y-m-d)) (Updates)))
