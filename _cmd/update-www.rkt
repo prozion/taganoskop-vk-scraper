@@ -38,6 +38,7 @@
         (template-name (or template-name page-id-string))
         (processed-template (process-html-template (format "../_templates/~a.t" template-name) #:tabtree-root "../knowledge" #:namespace ns)))
     (Updates (hash-union (hash page-id (cur-y-m-d)) (Updates)))
+    (--- (format "~a/~a" SERVER_DIR file-to-write))
     (write-file (format "~a/~a" SERVER_DIR file-to-write) processed-template)
     ))
 
