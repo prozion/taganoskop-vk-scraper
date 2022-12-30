@@ -2,10 +2,11 @@
 
 (require compatibility/defmacro)
 (require odysseus)
-(require tabtree/tabtree1)
-(require tabtree/utils1)
-(require tabtree/template-functions)
-(require odysseus/api/vk)
+(require odysseus/time)
+(require odysseus/text)
+(require odysseus/persistents)
+(require tabtree)
+(require vk)
 (require "globals.rkt")
 
 (require (for-syntax odysseus))
@@ -75,11 +76,14 @@
 (define (members-number entity)
   (->number (or ($ u entity) ($ p entity) ($ f entity) 0)))
 
+(define (get-name item)
+  (or ($ name item) ($ __name item) (namefy ($ __id item))))
+
 (define (get-name* item)
   (correct-geography-names (get-name item)))
 
 (define-catch (get-entity-type entity)
-  ($* type entity))
+  (or ($ type entity) "unknown"))
 
 (define-catch (hashtags->a text)
   (regexp-replace*
@@ -150,7 +154,7 @@
   ($ vk item))
 
 (define-catch (get-entity-parameter entity-id parameter-name entities)
-  (let* ((entity (and entities (@id entity-id entities))))
+  (let* ((entity (and entities ($2 entity-id entities))))
     (and entity (hash-ref* entity parameter-name #f))))
 
 (define (get-vk-image p)
@@ -160,16 +164,11 @@
     img-url))
 
 (define (get-entities
-            tree-file-path
-            #:derived (derived (λ (x) (or
-                                        (re-matches? "tr-[\\-a-z0-9]*" (->string x))
-                                        (re-matches? "\\+[\\-a-z0-9]+" (->string x))))))
-  (filter
-    (λ (x) (and (vk? x) (not (ignore? x))))
-    (get-leaves
-      #:exclude '(i ref alt-id syn illegal keywords)
-      #:derived-attrs derived
-      (parse-tab-tree tree-file-path))))
+            tree-file-path)
+  (hash-values
+    (hash-filter
+      (λ (k v) (and (vk? v) (not (ignore? v))))
+      (parse-tabtree tree-file-path))))
 
 (define-catch (cache-posts-by-uid
             #:uids uids
@@ -218,7 +217,7 @@
           (entities (get-entities source-path))
           (entities (or entities empty))
           (entitites (if ignore-with-status
-                        (filter-not (λ (entity) ($* s entity)) entities)
+                        (filter-not (λ (entity) ($2 s entity)) entities)
                         entities))
 
           (_ (--- (format "\nОбновляем кэш. Сканируем ~a ~a из списка ~a:"
@@ -229,7 +228,7 @@
                   ((res empty))
                   ((entity entities))
                   (cond
-                    ((and ignore-sleepy (indexof? (id-sleepy) (extract-pure-alias ($ vk entity))))
+                    ((and ignore-sleepy (index-of? (id-sleepy) (extract-pure-alias ($ vk entity))))
                       (display ".")
                       (flush-output)
                       res)
@@ -242,7 +241,7 @@
                                           (get-last-posts #:user vk-url #:limit (or read-depth 15) #:entity entity #:success-display "+" #:delay 0.1))
                                         (else
                                           (get-last-posts #:group vk-url #:limit (or read-depth 15) #:entity entity #:success-display "+" #:delay 0.1))))
-                                    (string-split ($ vk entity) ",")))))))
+                                    (listify ($ vk entity))))))))
           (posts (cleanmap (flatten posts))))
       posts))
   (define (get-list-of-sources sources)
@@ -259,6 +258,8 @@
                           #:read-depth read-depth)))))
       (target-persistence result)
       #t))
+
+(define (server?) #t)
 
 (define-catch (get-last-posts
                   #:group (group-url #f)
@@ -329,7 +330,7 @@
                                     (let ((likes (->number ($ likes.count post)))
                                           (reposts (->number ($ reposts.count post)))
                                           (comments (->number ($ comments.count post)))
-                                          (users (and entity ($ u entity) (->number (take-one ($ u entity)))))
+                                          (users (and entity ($ u entity) (->number (only-or-first ($ u entity)))))
                                           (place (and entity
                                                       (or
                                                         ($ place entity)
@@ -339,7 +340,7 @@
                                                         ($ _parent entity)
                                                         DEFAULT_PLACE))))
                                       (hash
-                                        'title (lshift (string-replace ($ text post) "\t" "") 80)
+                                        'title (string-take (string-replace ($ text post) "\t" "") 80)
                                         'gid group-id
                                         'uid user-id
                                         'entity-id (and entity ($ __id entity))
@@ -391,11 +392,10 @@
 
 (define-catch (filter-posts posts #:entities entities #:type (type #f) #:trigger (trigger #f) #:trigger-expression (trigger-expression #f) #:within-days (within-days #f) #:start-n (start-n #f) #:n (n #f) #:min-symbols (min-symbols #f) #:max-symbols (max-symbols #f) #:use-special-tags (use-special-tags? #f))
   (let* (
-        (trigger-aliases
-          (let* (
-                (triggers ($3 triggers (parse-tab-tree "../knowledge/_triggers.tree")))
-                (trigger_id_values (for/hash ((trigger triggers)) (values ($ __id trigger) ($ v trigger)))))
-                            trigger_id_values ))
+        (triggers (get-subtree '("triggers") (parse-tabtree "../knowledge/_triggers.tree")))
+        (trigger-aliases (for/hash
+                            (((k trigger) triggers))
+                            (values k ($ v trigger))))
         ; filter by publication date
         (posts (filter-not
             (λ (post)
@@ -420,7 +420,7 @@
                             (current-trigger (or trigger-expression (get-entity-parameter ($ entity-id post) trigger entities)))
                             (current-trigger-expression? (trigger-expression? current-trigger)))
                       (cond
-                        ; ((not (@id ($ entity-id post) entities)) #f)
+                        ; ((not ($2 ($ entity-id post) entities)) #f)
                         ((equal? "<none>" current-trigger) res) ; ignore
                         ((equal? "<f>" current-trigger) (pushr res post)) ; reset
                         ((and use-special-tags? (contains-special-tags? ($ text post)))
@@ -458,7 +458,7 @@
                                     res)))
                     (cond
                       (double? res)
-                      ((not double?) (pushl res post))))))
+                      ((not double?) (cons post res))))))
         )
     posts))
 
@@ -476,27 +476,27 @@
 (define-catch (get-title p (default-title ""))
   (or ($ title p) default-title))
 
-; в частности для прибавления приставки "Паркран" при именовании паркранов
 (define-catch (get-source-title p c (default-title ""))
   (or
     (and
       c
       (let* ((name (get-name c))
-            (name-prefix ($ +name-prefix c))
-            (name-prefix (if name-prefix (namefy name-prefix) ""))
-            (name-prefix-len (string-length name-prefix))
-            (name-already-prefixed? (and
-                                      (>= (string-length name) (string-length name-prefix))
-                                      (equal? name-prefix (substring name 0 (string-length name-prefix)))))
-            (name (if (or name-already-prefixed? (not name-prefix))
-                      name
-                      (str name-prefix name)))
+            ; в частности для прибавления приставки "Паркран" при именовании паркранов
+            ; (name-prefix ($ +name-prefix c))
+            ; (name-prefix (if name-prefix (namefy name-prefix) ""))
+            ; (name-prefix-len (string-length name-prefix))
+            ; (name-already-prefixed? (and
+            ;                           (>= (string-length name) (string-length name-prefix))
+            ;                           (equal? name-prefix (substring name 0 (string-length name-prefix)))))
+            ; (name (if (or name-already-prefixed? (not name-prefix))
+            ;           name
+            ;           (str name-prefix name)))
             (name (or name default-title)))
         name))
     (format "public~a" ($ gid p))))
 
 (define (get-sitemap #:only-visible-pages? (only-visible? #f))
-  (let* ((pages (get-leaves (parse-tab-mtree "../knowledge/_sitemap.mtree")))
+  (let* ((pages (get-leaves (parse-tabtree "../knowledge/_sitemap.mtree")))
         (pages (if only-visible?
                   (filter
                       (λ (page) (or ($ n page) ($ show page)))

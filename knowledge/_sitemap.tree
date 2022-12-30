@@ -1,0 +1,15 @@
+карта_сайта
+	меню_1
+		taganrog name:"Таганрог" title:"Лента событий в Таганроге" description:"Агрегатор постов о предстоящих событиях в Таганроге" keywords:"агрегатор постов,агрегатор анонсов" h1:"События в Таганроге" path:index.html changefreq:daily n:1
+		history name:"История" title:"История Таганрога" description:"Публикации по краеведению и истории города" keywords:"агрегатор постов,агрегатор анонсов" h1:"История Таганрога" path:history.html changefreq:daily n:2
+		; Search_people
+		; 	name:"Поиск людей" 
+		; 	title:"Поиск людей"
+		; 	description:""
+		; 	keywords:""
+		; 	h1:"Посты со стен пользователей вк"
+		; 	path:search_people.html 
+		; 	n:-1
+		; <.>
+		it name:"It" title:"Лента IT Сообщества Таганрога и Ростова" description:"Агрегатор постов от IT компаний региона" keywords:"агрегатор постов,агрегатор анонсов" h1:"IT Сообщество" path:it.html  changefreq:daily n:2
+		

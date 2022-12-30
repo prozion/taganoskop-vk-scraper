@@ -1,10 +1,12 @@
 #lang racket
 
 (require odysseus)
-(require tabtree/tabtree1)
-(require tabtree/template-functions)
+(require odysseus/html)
+(require odysseus/time)
+(require odysseus/persistents)
+(require tabtree)
 (require tabtree/html)
-(require odysseus/api/vk)
+(require vk)
 (require compatibility/defmacro)
 (require (file "~/.private/APIs.rkt"))
 
@@ -19,7 +21,8 @@
 (define news_cards "")
 (define page-id "")
 
-(set-access-token ($ access_token vk/postagg2_1))
+; (set-access-token ($ access_token vk/postagg2_1))
+(set-access-token ($ access_key vk/nasevere_1))
 
 (persistent h-galias-gid)
 
@@ -47,7 +50,7 @@
 (--- (format "~a: Обновляем контент сайта" (timestamp)))
 
 (define (is-flag? flag)
-  (indexof?
+  (index-of?
     (vector->list (current-command-line-arguments))
     flag))
 
@@ -83,11 +86,11 @@
 (--- "Компилируем страницы сайта")
 
 (when-not (is-flag? "no-taganrog")
-  (generate-page taganrog (++ event_future event_by_date) "Таганрог" WITHIN_DAYS MIN_SYMBOLS "index.html" #t))
-(when-not (is-flag? "no-history")
-  (generate-page history (** (-- not_history) history) "История Таганрога" (+ WITHIN_DAYS 60) 100 "history.html" #t))
-(when-not (is-flag? "no-it")
-  (generate-page it (++ it_general_terms local) "IT-сообщество" WITHIN_DAYS MIN_SYMBOLS "it.html" #t))
+  (generate-page taganrog (++ event_future event_by_date) "Таганрог" WITHIN_DAYS MIN_SYMBOLS "index.html" #f))
+; (when-not (is-flag? "no-history")
+;   (generate-page history (** (-- not_history) history) "История Таганрога" (+ WITHIN_DAYS 60) 100 "history.html" #t))
+; (when-not (is-flag? "no-it")
+;   (generate-page it (++ it_general_terms local) "IT-сообщество" WITHIN_DAYS MIN_SYMBOLS "it.html" #t))
 
 (write-data-to-file (Updates) (_cache "page_updates.txt"))
 

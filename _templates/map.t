@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <!-- %%(str "timestamp: " (timestamp))%% -->
-    %%(define page (@id page-id PAGES))%%
+    %%(define page ($2 page-id PAGES))%%
     %%(standard-head-part
         #:title ($ title page)
         #:description ($ description page)

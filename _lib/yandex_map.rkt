@@ -2,6 +2,8 @@
 
 (require compatibility/defmacro)
 (require odysseus)
+(require odysseus/text)
+(require odysseus/html)
 (require tabtree)
 
 (require "globals.rkt")

@@ -2,6 +2,7 @@
 
 (require compatibility/defmacro)
 (require odysseus)
+(require tabtree)
 ;
 (require "globals.rkt")
 ;
@@ -49,7 +50,7 @@
   ($ addr (get-place-parts place)))
 
 (define-catch (get-coors-of-the-place place_string places_coors)
-  (let* ((place (and place_string (@id (string-downcase place_string) places_coors)))
+  (let* ((place (and place_string ($2 (string-downcase place_string) places_coors)))
         (latlon? (and ($ lat place) ($ lon place)))
         (ref? ($ ref place))
         (coors_hash (or

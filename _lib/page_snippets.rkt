@@ -2,6 +2,10 @@
 
 (require compatibility/defmacro)
 (require odysseus)
+(require odysseus/time)
+(require odysseus/text)
+(require odysseus/html)
+(require tabtree)
 (require "functions.rkt")
 (require "globals.rkt")
 (require "geography.rkt")
@@ -119,10 +123,10 @@ COUNTERS
                 #:additional-menu-class (additional-menu-class #f)
                 #:rubric (rubric #f)
               )
-  (let* ((all-pages (get-sitemap))
+  (let* ((all-pages (hash-values (get-sitemap)))
         (pages (cond
                   (section (filter (λ (x) (equal? ($ _parent x) section)) all-pages))
-                  (page-ids (filter (λ (x) (indexof? page-ids ($ id x))) all-pages))
+                  (page-ids (filter (λ (x) (index-of? page-ids ($ id x))) all-pages))
                   (else empty)))
         (pages (filter (λ (page) (and ($ n page) (non-negative-number? ($ n page)))) pages)) ; don't show pages without menu order number 'n'
         (pages (sort pages (λ (a b) (< (->int ($ n a)) (->int ($ n b))))))
@@ -214,7 +218,7 @@ TEXT
                       (let* ((text_to_show (cond
                                             ((not max-symbols) (clean-htmlify ($ text p)))
                                             ((> (string-length ($ text p)) max-symbols)
-                                              (str (clean-htmlify (string-ltrim ($ text p) max-symbols)) "..."))
+                                              (str (clean-htmlify (string-take ($ text p) max-symbols)) "..."))
                                             (else
                                               (clean-htmlify ($ text p)))))
                             (text_to_show (string-trim text_to_show))
@@ -245,8 +249,14 @@ TEXT
     (for/fold
       ((res ""))
       ((p posts) (i (in-naturals)))
-      (let* ((c (or
-                  (and entities (@id ($ entity-id p) entities))
+      (let* (
+            (c (or
+                  (and
+                    entities
+                    (only-or-first
+                      (filter
+                        (λ (item) (equal? ($ __id item) ($ entity-id p)))
+                        entities)))
                   (hash))))
         (str
           res
