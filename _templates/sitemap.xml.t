@@ -3,7 +3,7 @@
 %%(define url-part
 #<<URL-PART
   <url>
-     <loc>http://cpu.denis-shirshov.ru/~a</loc>
+     <loc>http://taganoskop.denis-shirshov.ru/~a</loc>
      <lastmod>~a</lastmod>
      <changefreq>~a</changefreq>
   </url>

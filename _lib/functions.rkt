@@ -496,10 +496,10 @@
     (format "public~a" ($ gid p))))
 
 (define (get-sitemap #:only-visible-pages? (only-visible? #f))
-  (let* ((pages (get-leaves (parse-tabtree "../knowledge/_sitemap.mtree")))
+  (let* ((pages (get-leaves (parse-tabtree "../knowledge/_sitemap.tree")))
         (pages (if only-visible?
-                  (filter
-                      (λ (page) (or ($ n page) ($ show page)))
+                  (hash-filter
+                      (λ (k page) (or ($ n page) ($ show page)))
                       pages)
                   pages)))
     pages))
